@@ -7,7 +7,7 @@
         "watch": "tsc --watch"
     },
     "dependencies": {
-        "docgo-sdk": "file:../sdk-js",
+        "docgo-sdk": "github:doc9-oficial/docgo-sdk-js",
         "openai": "^4.28.0"
     },
     "devDependencies": {
