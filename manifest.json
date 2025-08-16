@@ -1,0 +1,54 @@
+{
+    "name": "query",
+    "version": "1.0.0",
+    "description": "App padrão para consultas usando OpenAI GPT com suporte MCP",
+    "functions": {
+        "prompt": {
+            "script": "dist/index.js",
+            "description": "Executa um prompt no ChatGPT com capacidade de chamar outros apps",
+            "parameters": [
+                {
+                    "name": "prompt",
+                    "type": "string",
+                    "required": true,
+                    "description": "O prompt para enviar ao ChatGPT"
+                },
+                {
+                    "name": "context",
+                    "type": "object",
+                    "required": false,
+                    "description": "Contexto adicional para o prompt"
+                }
+            ],
+            "mcp": {
+                "name": "query_prompt",
+                "description": "Execute a prompt using ChatGPT with MCP tool calling capabilities",
+                "inputSchema": {
+                    "type": "object",
+                    "properties": {
+                        "prompt": {
+                            "type": "string",
+                            "description": "The prompt to send to ChatGPT"
+                        },
+                        "context": {
+                            "type": "object",
+                            "description": "Additional context for the prompt"
+                        }
+                    },
+                    "required": [
+                        "prompt"
+                    ]
+                }
+            }
+        }
+    },
+    "variables": {
+        "model": "gpt-4-turbo-preview",
+        "max_tokens": "2000",
+        "temperature": "0.7"
+    },
+    "mcp": {
+        "enabled": true,
+        "tools": []
+    }
+}

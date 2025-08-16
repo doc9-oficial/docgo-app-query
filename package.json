@@ -1,0 +1,17 @@
+{
+    "name": "query-app",
+    "version": "1.0.0",
+    "description": "DocGo Query App with OpenAI integration",
+    "scripts": {
+        "build": "tsc",
+        "watch": "tsc --watch"
+    },
+    "dependencies": {
+        "docgo-sdk": "file:../sdk-js",
+        "openai": "^4.28.0"
+    },
+    "devDependencies": {
+        "typescript": "^5.0.0",
+        "@types/node": "^20.0.0"
+    }
+}
